@@ -28,6 +28,12 @@ main{
     justify-content: center;
 }
 
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1091px;
+}
+
 ul li{
     display: flex;
     align-items: center;
@@ -37,10 +43,20 @@ ul li{
     background-color: #a7e9af;
     border: 1px solid #99CEA8;
     border-radius: 5px;
-    
+    margin: 15px;
+    transition: all 1s;
+ 
 }
+
+
 
 ul img{
     width: 100px;
     height: 100px;
+    
+}
+
+.sideCard{
+    transform: rotateY(180deg);
+    background-color: blue;
 }
