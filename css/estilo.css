@@ -21,42 +21,50 @@ header h1{
     color: #75B79E;
 }
 
-main{
+.cartas{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-ul{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1091px;
-}
-
-ul li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.cards{
     width: 117px;
     height: 146px;
-    background-color: #a7e9af;
-    border: 1px solid #99CEA8;
-    border-radius: 5px;
-    margin: 15px;
-    transition: all 1s;
- 
+    position: relative;
+    margin: 10px;
 }
 
+.lista{
 
-
-ul img{
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;       
+    backface-visibility: hidden;
+    transition: all 1s; 
     
 }
 
-.sideCard{
+img{
+    width: 100px;
+    height: 100px;    
+}
+
+.tras{
     transform: rotateY(180deg);
-    background-color: blue;
+}
+
+.sideCard .tras, .iguais .tras {
+    transform: rotateY(0deg);
+  }
+
+.sideCard .frente, .iguais .tras {
+    transform: rotateY(-180deg);
+
 }
