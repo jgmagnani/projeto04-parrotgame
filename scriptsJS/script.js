@@ -34,8 +34,6 @@ function cronometro(){
     tempoAtual.innerHTML ++;
 }
 
-
-
 // coloca as cartas em um array
 
 let addLi = []
@@ -67,12 +65,16 @@ for (let index = 0; index < addLi.length; index++) {
 
 function virarCarta(elemento){   
     
+    if ( elemento.classList.contains("sideCard")){
+        return
+    }
+
     elemento.classList.add("sideCard");
     cartas.push(elemento);
     
     jogadas++;
     
-    if (cartas.length >= 2) {
+    if (cartas.length == 2) {
         if (cartas[0].innerHTML !== cartas[1].innerHTML) {
             setTimeout(desvirar, 1000, cartas[0], cartas[1])
         }        
