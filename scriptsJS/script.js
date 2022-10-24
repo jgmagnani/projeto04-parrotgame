@@ -100,11 +100,11 @@ function acabou() {
     let jogarNovamente = prompt('Deseja jogar novamenete? apenas sim ou não')
     
     
-    while (jogarNovamente !== "sim") {
-        jogarNovamente = prompt('Responda penas com sim ou não')     
+    while (jogarNovamente !== "sim") {             
         if (jogarNovamente === 'não') {
             break
         }
+        jogarNovamente = prompt('Responda penas com sim ou não')
     }
 
     if (jogarNovamente === "sim") {
