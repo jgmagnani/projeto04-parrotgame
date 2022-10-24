@@ -1,5 +1,6 @@
 let jogadas = 0;
 let qtdCards = Number(prompt("Quantas cartas desejas jogar? Valores entre 4 e 14 (somente par)"));
+let cartas = []
 const gifs = [
     'bobrossparrot.gif','bobrossparrot.gif',
     'explodyparrot.gif', 'explodyparrot.gif',
@@ -11,12 +12,28 @@ const gifs = [
 
 
 //Verifica quantidade de cartas dentro dos requisitos (Entre 4 e 14 apenas par)
+
+
+   
 while ( qtdCards > 14 || qtdCards < 4 || qtdCards % 2 !== 0){    
     if ( qtdCards % 2 !== 0 && Number(qtdCards)){
         alert("O número é impar");
     }    
     qtdCards = prompt("Insira um valor entre 4 e 14 (apenas par)");
+
 }
+
+
+let tempoAtual = document.querySelector(".timer");
+let tempooo = tempoAtual.innerHTML
+
+
+const tempoRolando = setInterval(cronometro, 1000);
+
+function cronometro(){
+    tempoAtual.innerHTML ++;
+}
+
 
 
 // coloca as cartas em um array
@@ -47,7 +64,7 @@ for (let index = 0; index < addLi.length; index++) {
 }
 
 //Função criada no click da carta para virar ela
-let cartas = []
+
 function virarCarta(elemento){   
     
     elemento.classList.add("sideCard");
@@ -77,6 +94,25 @@ function comparar() {
     return Math.random() - 0.5;
 }
 
-function acabou() {
-    alert('cabo')
+function acabou() { 
+    PararCronometro();
+    alert(`Você ganhou em ${jogadas} jogadas e ${tempoAtual.innerHTML} segundos!`)
+    let jogarNovamente = prompt('Deseja jogar novamenete? apenas sim ou não')
+    
+    
+    while (jogarNovamente !== "sim") {
+        jogarNovamente = prompt('Responda penas com sim ou não')     
+        if (jogarNovamente === 'não') {
+            break
+        }
+    }
+
+    if (jogarNovamente === "sim") {
+        location.reload()
+    }
+
+}
+
+function PararCronometro(){
+    clearInterval(tempoRolando);
 }
